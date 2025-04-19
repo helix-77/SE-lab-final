@@ -24,3 +24,8 @@ TEST(VehicleFactoryTest, ReturnsNullForUnknownType) {
     auto vehicle = VehicleFactory::createVehicle("plane");
     EXPECT_EQ(vehicle, nullptr);
 }
+
+TEST(VehicleFactoryTest, HandlesEmptyString) {
+	auto vehicle = VehicleFactory::createVehicle("");
+	EXPECT_EQ(vehicle, nullptr);
+}
